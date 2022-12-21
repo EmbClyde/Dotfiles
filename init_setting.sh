@@ -9,6 +9,13 @@ apt install zsh neovim curl wget git
 # Install oh-my-zsh ---[curl]
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# Install zsh-syntax-highlighting
+cd ~/.oh-my-zsh/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+# add params to .zshrc
+# plugins=(git ... zsh-syntax-highlighting)
+
 # Install LSD(LS Deluxe) ---[curl]
 curl -L https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd-musl_0.23.1_amd64.deb -O
 dpkg -i lsd-musl_0.23.1_amd64.deb
